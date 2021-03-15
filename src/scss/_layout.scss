@@ -1,0 +1,70 @@
+html,
+body{
+  box-sizing: border-box;
+}
+.container{
+  min-height: 100vh;
+  background-image: url("../images/bg-stars.svg");
+  background-size: cover;
+  background-color: $dark-blue;
+  @include flex-col;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+section{
+  width: 100%;
+}
+
+// title section
+.title{
+  height: 20vh;
+  @include flex-row;
+  align-items: flex-end;
+}
+
+// clock section
+.clock{
+  margin-bottom: 3rem;
+  height: 50vh;
+
+  .clock-container{
+    width: 100%;
+    height: 13rem;
+    @include flex-row;
+    background: $dark-blue;
+  }
+}
+
+// bottom section
+.social{
+  background-image: url("../images/pattern-hills.svg");
+  background-size: cover;
+  @include flex-col;
+  justify-content: space-between;
+  padding: 0 1rem;
+
+  .social-icons{
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+  }
+  .attribution{
+    margin-bottom: 0.5rem;
+    color: $grayish-blue;
+
+    a{
+      color: $soft-red;
+      text-decoration: none;
+    }
+  }
+  img{
+    margin: 0rem 0.5rem;
+    cursor: pointer;
+    width: 1.2rem;
+
+    &:hover{
+      filter: invert(57%) sepia(34%) saturate(2499%) hue-rotate(307deg) brightness(96%) contrast(106%);
+    }
+  }
+
+}

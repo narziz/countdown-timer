@@ -1,0 +1,54 @@
+@media (max-width: 767px) {
+  .title{
+    h1 {
+      font-size: 1rem;
+    }
+  }
+  .clock-container{
+    .page{
+      height: 4rem;
+      width: 5rem;
+      margin: 0em 0.5em 1em 0em;
+    }
+    ul.flip li{
+      height: 4rem;
+    }
+    .countdown-legend{
+      letter-spacing: 0.2rem;
+      font-size: 0.6rem;
+      margin-top: 1.5rem;
+    }
+    .number{
+      font-size: 2.5rem;
+    }
+    .up{
+      border-radius: 0.5rem 0.5rem 0 0;
+
+      .number{
+        bottom: -81%;
+      }
+    }
+    .down{
+      border-radius: 0 0 0.5rem 0.5rem;
+
+      .number{
+        top: -80.5%;
+      }
+    }
+  }
+
+  .social{
+    // width: 100vw;
+    .social-icons{
+      margin-top: 3rem;
+    }
+
+    img{
+      margin: 0rem 0.5rem;
+    }
+  }
+  .attribution{
+    font-size: 0.6rem;
+
+  }
+}

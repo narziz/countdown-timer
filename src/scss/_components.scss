@@ -1,0 +1,148 @@
+.clock-container{
+  .page{
+    width: 9rem;
+    height: 8rem;
+    margin: 0em 1em 2em 0em;
+    border-radius: 1em;
+    box-shadow: 0px 10px 1px 0px $very-dark-blue;
+  }
+
+  .countdown-legend{
+    margin-top: 2rem;
+  }
+  .wrapper{
+    width: 100%;
+    height: inherit;
+    background-color: $dark-desaturated-blue;
+    border-radius: 1rem;
+  }
+
+  ul.flip{
+    list-style: none;
+    position: relative;
+
+    li{
+      position: absolute;
+      height: 8rem;
+      width: 100%;
+      z-index: -1;
+
+      &::after{
+        content: '';
+        width: 100%;
+        height: .05rem;
+        background-color: $dark-blue;
+        top: 50%;
+        position: absolute;
+      }
+    }
+  }
+
+  .up{
+    height: 50%;
+    background-color: $dark-desaturated-blue;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border-radius: 1em 1em 0 0;
+
+    &::after,
+    &::before{
+      @include half-circle;
+    }
+
+    &::before{
+      left: -0.5em;
+    }
+  }
+
+  .down{
+    height: 50%;
+    background-color: $dark-desaturated-blue;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border-radius: 0 0 1em 1em;
+
+    &::after,
+    &::before{
+      @include half-circle;
+      top: -0.6em;
+    }
+
+    &::before{
+      left: -0.5em;
+      top: -0.6em;
+    }
+  }
+
+  .number{
+    font-size: 5em;
+    font-weight: bold;
+    color: $soft-red;
+    position: absolute;
+  }
+
+  .up .number{
+    bottom: -71.5%;
+  }
+  .down .number{
+    top: -71.5%;
+  }
+}
+
+
+/* PLAY */
+
+ul.flip li.before .up{
+  transform-origin: bottom center 0px;
+  animation: turnForUp 0.5s linear both;
+}
+ul.flip li.active .down{
+  transform-origin: top center 0px;
+  animation: turnForDown 0.5s 0.5s linear both;
+}
+
+
+@keyframes turnForUp {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    /* transform: rotateX(90deg); */
+    transform: perspective(30vw) rotateX(-90deg);
+  }
+}
+@keyframes turnForDown {
+  0% {
+    visibility: visible;
+    /* transform: rotateX(90deg); */
+    transform: perspective(30vw) rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+ul.flip li.before {
+    z-index: 4;
+}
+
+ul.flip li.active {
+    z-index: 2;
+    animation: asd .5s linear both;
+}
+
+@keyframes asd {
+    0% {
+        z-index: 2;
+    }
+    90% {
+        z-index: 3;
+    }
+    100% {
+        z-index: 5;
+    }
+}
