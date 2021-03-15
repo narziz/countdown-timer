@@ -1,6 +1,3 @@
-# countdown-timer
-countdown-timer
-
 # Countdown Timer
 Countdown Timer with flip cards.
 This is a [Frontend Mentor](https://www.frontendmentor.io) challenge.
